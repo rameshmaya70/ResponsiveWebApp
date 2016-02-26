@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="Form.css"></head>
+<body>
+
+	<p id = "alert" style = "color:red"> </p>
+
+<form  name="myForm" action="action_page.php" onsubmit="validateForm()">
+  First name:<br>
+  <input type="text" name="fname">
+  <br>
+  Last name:<br>
+  <input type="text" name="lastname" >
+  <br>
+  Age:<br>
+  <input type="text" name="age" >
+  <br>
+  Sex:<br>
+  <input type="text" name="sex" >
+  <br>
+
+  Email:<br>
+  <input type="text" name="email" >
+  <br>
+  City:<br>
+  <input type="text" name="city" >
+  <br>
+  Hotel Name:<br>
+  <input type="text" name="HotelName" >
+  <br>
+  Number of Rooms:<br>
+  <input type="text" name="NumberOfRooms" >
+  <br>
+  
+
+  <br>
+ 
+</form> 
+
+<input type="button" onclick="validateForm()" value="Submit" class = "Submit">
+
+<p>If you click the "Submit" button, the form-data will be submitted to server .</p>
+
+
+
+<script type="text/javascript">
+function validateForm() {
+    var fname = document.forms["myForm"]["fname"].value;
+    var lname = document.forms["myForm"]["lastname"].value;
+    var age = document.forms["myForm"]["age"].value;
+    var sex = document.forms["myForm"]["sex"].value;
+    var hotelName = document.forms["myForm"]["HotelName"].value;
+    var noOfRooms = document.forms["myForm"]["NumberOfRooms"].value;
+    var Email = document.forms["myForm"]["email"].value;
+    var city = document.forms["myForm"]["city"].value;
+    var alertMsg = "";
+    if (fname == null || fname == "") {
+        document.getElementById("alert").innerHTML = "First Name must be filled out";
+        return;
+      
+    }else if(lname == null || lname == ""){
+    	document.getElementById("alert").innerHTML = "Last Name must be filled out";
+    	return;
+
+    }else if(age == null || age == ""){
+
+    	document.getElementById("alert").innerHTML = "Age  must be filled out";
+    	return;
+    }
+    else if(sex == null || sex == ""){
+    	document.getElementById("alert").innerHTML = "Sex must be filled out";
+    	return;
+
+    }
+    else if(city == null || city == ""){
+
+      document.getElementById("alert").innerHTML = "City  must be filled out";
+      return;
+    }else if(hotelName == null || hotelName == ""){
+
+    	document.getElementById("alert").innerHTML = "Hotel Name  must be filled out";
+    	return;
+    }
+    
+    else if(noOfRooms == null || noOfRooms == ""){
+
+    	document.getElementById("alert").innerHTML = "Please fill NumberOfRooms field";
+    	return;
+    }else if(Email == null || Email == null){
+      document.getElementById("alert").innerHTML = "Email  must be filled out";
+      return;
+    }else if(Email.length > 0){
+
+      var atpos = Email.indexOf("@");
+      var dotpos = Email.lastIndexOf(".");
+    if (atpos<1 || dotpos<atpos+2 || dotpos+2>=Email.length){
+      document.getElementById("alert").innerHTML = "Please enter valid email";
+      return;
+    }else{
+        console.log("else part");
+       //location.href = "index.html";
+       //document.getElementById("alert").innerHTML = "Registration Completed";
+        window.history.back();
+       
+       //document.getElementById("alert").style.fontSize = 30;
+    }
+
+    }
+      else{
+        console.log("else part");
+    	// location.href = "index.html";
+      //document.getElementById("alert").innerHTML = "Registration Completed";
+      // window.history.back();
+    }
+     
+    
+}
+</script>
+
+</body>
+</html>

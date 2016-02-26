@@ -5,20 +5,22 @@
 	<title>ResponsiveWeb</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+	<script type="text/javascript" src="js/jquery-1.12.0.js"></script>
+
 
 </head>
 
 <body>
 	<div id = "wrapper">
 		<header>
-			<a href="index.html"><img src="images/toplogocm.jpg"></a>
+			<a href="index.html"><img id = "topLogo" src=""></a>
 		</header>
 		<nav>
 			<ul>
 				<li class = "active"> <a href="#"> Home</a></li>
 				<li > <a href="#"> About Us</a></li>
 				<li > <a href="#"> Places</a></li>
-				<li > <a href="#"> Hotels</a></li>
+				<li > <a href="form.html" onclick="loadLogin()"> Hotels</a></li>
 				<li > <a href="#"> Temples</a></li>
 
 			</ul>
@@ -27,39 +29,39 @@
 		<aside class = "sidebar">
 			<div id = "social">
 				<tr>
-					<td><a href="http://www.facebook.com" target ="_blank"><img src="images/facebook.png"></a></td>
-					<td><a href="http://www.twitter.com" target ="_blank"><img src="images/twitter.png"></a></td>
-					<td><a href="http://www.youtube.com/user/thetamilnadutourism" target ="_blank"><img src="images/youtube.png"></a></td>
-					<td><a href="http://www.plus.google.com" target ="_blank"><img src="images/google_plus.png"></a></td>
+					<td><a  href="http://www.facebook.com" target ="_blank"><img id = "fbLogo" src=""></a></td>
+					<td><a  href="http://www.twitter.com" target ="_blank"><img id = "twtLogo" src=""></a></td>
+					<td><a  href="http://www.youtube.com/user/thetamilnadutourism" target ="_blank"><img id = "youtubeLogo" src=""></a></td>
+					<td><a  href="http://www.plus.google.com" target ="_blank"><img id = "googlePlusLogo" src=""></a></td>
 
 				</tr>
 			</div>
 		</aside>
 		<section class = "left-col">
 			<h3>Courtallam</h3>
-			<img src="images/bg2.jpg">
-			<p>Courtallam or Kutralam, Spa of South India, is a panchayat town situated at a mean elevation of 160 m (520 ft) on the Western Ghats in Tirunelveli District of Tamil Nadu, India. Many seasonal and few perennial rivers such as the Chittar River, the Manimuthar River, the Pachaiyar River and the Tambaraparani River originate in this region</p>
+			<img id = "topLeftImg" src="">
+			<p id = "topLeftContent"></p>
 		</section>
 
 		<aside class = "sidebar">
 			<h3>Temples</h3>
-			<img src="images/6.jpg">
-			<p>It is the elegant twin temple of Sundareswarar and Meenakshi and the life of Madurai City revolves around this temple. The construction process of the temple began 2000 years ago.</p>
+			<img id = "topRightImg" src="">
+			<p id = "topRightContent"></p>
 
 		</aside>
 		<aside class = "sidebar">
 			<h3>Hotels</h3>
-			<img src="images/hotel.jpeg">
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ex justo, dignissim nec velit eget, vehicula aliquet tortor. In scelerisque consequat ipsum, vitae fringilla ex iaculis ac. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nunc condimentum velit massa, ut accumsan mi bibendum nec. Nam consectetur tellus in nisi malesuada scelerisque. Donec at faucibus felis, vel semper sem. Duis vitae diam ligula.</p>
+			<img id = "botRightImg" src="">
+			<p id= "botRightContent"></p>
 
 		</aside>
 		<section class = "left-col">
 			<h3>Kodaikanal</h3>
 			<div class = "vid">
-				<iframe width="420" height="315" src="https://www.youtube.com/embed/mbcQQVFBSFA" frameborder="0" allowfullscreen></iframe>
+				<iframe id = "youtubeLink" width="420" height="315" src="" frameborder="0" allowfullscreen></iframe>
 
 			</div>
-			<p>Kodaikanal is a city in the hills of the Dindigul district in the state of Tamil Nadu, India.[2] Its name in the Tamil language means "The Gift of the Forest".[3] Kodaikanal is referred to as the "Princess of Hill stations" and has a long history as a retreat and popular tourist destination.</p>
+			<p id = "botLeftContent"></p>
 		</section>
 		<div class = "clear"></div>
 		<footer>
@@ -68,5 +70,37 @@
 
 
 	</div>
+
+	 <script>
+
+	 $(document).ready(function(){
+        //alert('ss');
+    $.ajax({url: "data/config.json", success: function(result){
+       //alert(result);
+        
+        var dt = jQuery.parseJSON(result);
+       
+        $("#topLogo").attr('src', 'images/'+dt.topLogo);
+        $("#fbLogo").attr('src', 'images/'+dt.fbLogo);
+        $("#twtLogo").attr('src', 'images/'+dt.twtLogo);
+        $("#youtubeLogo").attr('src', 'images/'+dt.youtubeLogo);
+        $("#googlePlusLogo").attr('src', 'images/'+dt.googlePlusLogo);
+        $("#topLeftImg").attr('src', 'images/'+dt.topLeftImg);
+        $("#topRightImg").attr('src', 'images/'+dt.topRightImg);
+        $("#botRightImg").attr('src', 'images/'+dt.botRightImg);
+        $("#youtubeLink").attr('src', dt.youtubeLink);
+        $("#topLeftContent").text(dt.topLeftContent);
+        $("#topRightContent").text(dt.topRightContent);
+        $("#botRightContent").text(dt.botRightContent);
+        $("#botLeftContent").text(dt.botLeftContent);
+    }});
+});
+        
+
+	 function loadLogin(){
+	 	console.log("loadLogin");
+
+	 }
+	 </script>
 </body>
 </html>

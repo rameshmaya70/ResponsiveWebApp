@@ -1,0 +1,17 @@
+
+{
+"display": "loginImg",
+"topLogo": "toplogocm.jpg",
+"fbLogo" : "facebook.png",
+"twtLogo" :"twitter.png",
+"youtubeLogo":"youtube.png",
+"googlePlusLogo": "google_plus.png",
+"topLeftImg":"bg2.jpg",
+"topRightImg" : "6.jpg",
+"botRightImg" : "hotel.jpeg",
+"youtubeLink" :"https://www.youtube.com/embed/mbcQQVFBSFA",
+"topLeftContent" : "Courtallam or Kutralam, Spa of South India, is a panchayat town situated at a mean elevation of 160 m (520 ft) on the Western Ghats in Tirunelveli District of Tamil Nadu, India. Many seasonal and few perennial rivers such as the Chittar River, the Manimuthar River, the Pachaiyar River and the Tambaraparani River originate in this region",
+"topRightContent" :"It is the elegant twin temple of Sundareswarar and Meenakshi and the life of Madurai City revolves around this temple. The construction process of the temple began 2000 years ago.",
+"botLeftContent":"Kodaikanal is a city in the hills of the Dindigul district in the state of Tamil Nadu, India.[2] Its name in the Tamil language means The Gift of the Forest.[3] Kodaikanal is referred to as the Princess of Hill stations and has a long history as a retreat and popular tourist destination.",
+"botRightContent":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ex justo, dignissim nec velit eget, vehicula aliquet tortor. In scelerisque consequat ipsum, vitae fringilla ex iaculis ac. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nunc condimentum velit massa, ut accumsan mi bibendum nec. Nam consectetur tellus in nisi malesuada scelerisque. Donec at faucibus felis, vel semper sem. Duis vitae diam ligula."
+}
