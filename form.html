@@ -24,6 +24,9 @@
   Email:<br>
   <input type="text" name="email" >
   <br>
+  Contact Number:<br>
+  <input type="text" name="mobile" >
+  <br>
   City:<br>
   <input type="text" name="city" >
   <br>
@@ -51,6 +54,7 @@ function validateForm() {
     var lname = document.forms["myForm"]["lastname"].value;
     var age = document.forms["myForm"]["age"].value;
     var sex = document.forms["myForm"]["sex"].value;
+    var mobile = document.forms["myForm"]["mobile"].value;
     var hotelName = document.forms["myForm"]["HotelName"].value;
     var noOfRooms = document.forms["myForm"]["NumberOfRooms"].value;
     var Email = document.forms["myForm"]["email"].value;
@@ -73,14 +77,18 @@ function validateForm() {
     	document.getElementById("alert").innerHTML = "Sex must be filled out";
     	return;
 
+    }else if(mobile == null || mobile == ""){
+
+      document.getElementById("alert").innerHTML = "Contact number must be filled out";
+      return;
     }
     else if(city == null || city == ""){
 
-      document.getElementById("alert").innerHTML = "City  must be filled out";
+      document.getElementById("alert").innerHTML = "City must be filled out";
       return;
     }else if(hotelName == null || hotelName == ""){
 
-    	document.getElementById("alert").innerHTML = "Hotel Name  must be filled out";
+    	document.getElementById("alert").innerHTML = "Hotel Name must be filled out";
     	return;
     }
     
@@ -89,7 +97,7 @@ function validateForm() {
     	document.getElementById("alert").innerHTML = "Please fill NumberOfRooms field";
     	return;
     }else if(Email == null || Email == null){
-      document.getElementById("alert").innerHTML = "Email  must be filled out";
+      document.getElementById("alert").innerHTML = "Email must be filled out";
       return;
     }else if(Email.length > 0){
 
